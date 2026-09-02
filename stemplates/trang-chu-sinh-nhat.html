@@ -197,17 +197,8 @@
       box-shadow: 0 0 0 10px rgba(255, 255, 255, .07), 0 18px 45px rgba(0, 0, 0, .35);
     }
 
-    .portrait::before {
-      width: 42%;
-      height: 42%;
-      margin-top: -20%;
-      border-radius: 50%;
-      background: #ffe3d4;
-      box-shadow: 0 62px 0 24px #263264;
-      content: "";
-    }
-
     .portrait img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -422,8 +413,9 @@
         <span class="star one" aria-hidden="true">✦</span>
         <span class="star two" aria-hidden="true">✧</span>
         <span class="star three" aria-hidden="true">✦</span>
-        <!-- Muốn dùng ảnh riêng, thay div bên dưới bằng: <img src="DAN_LINK_ANH_VAO_DAY" alt="Ảnh anh trai"> -->
-        <div class="portrait" id="portrait" aria-label="c:\Users\X\Downloads\image_f746eb81.png"></div>
+        <div class="portrait" id="portrait" aria-label="Ảnh anh trai">
+          <img src="{{ url_for('static', filename='images/image_f746eb81.png') }}" alt="Ảnh anh trai">
+        </div>
         <div class="name">ANH TRAI · 34</div>
       </div>
 
