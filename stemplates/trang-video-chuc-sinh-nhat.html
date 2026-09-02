@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video sinh nhật dành cho anh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #fff8f3; --muted: #c9bedc; --gold: #ffd77a; --pink: #ff9da9; --panel: rgba(31, 25, 69, .8); }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh; margin: 0; overflow-x: hidden; color: var(--ink);
+      font-family: "Be Vietnam Pro", sans-serif;
+      background: radial-gradient(circle at 50% 25%, rgba(102, 72, 169, .42), transparent 32rem), #0d102b;
+    }
+    .stars, .stars::before, .stars::after {
+      position: fixed; inset: 0; content: ""; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.8px), radial-gradient(circle, var(--gold) 0 1.1px, transparent 2px);
+      background-position: 12% 18%, 70% 42%; background-size: 185px 165px, 250px 225px; opacity: .35;
+    }
+    .stars::before { transform: translate(55px, 42px); opacity: .2; }
+    .stars::after { transform: translate(-45px, -50px); opacity: .16; }
+    main { position: relative; display: grid; min-height: 100vh; padding: 42px 18px; place-items: center; }
+    .card {
+      width: min(100%, 790px); padding: clamp(30px, 6vw, 62px) clamp(20px, 7vw, 75px) 38px;
+      text-align: center; border: 1px solid rgba(255,255,255,.15); border-radius: 34px;
+      background: linear-gradient(145deg, rgba(38, 43, 101, .9), var(--panel));
+      box-shadow: 0 28px 90px rgba(0,0,0,.38), inset 0 1px rgba(255,255,255,.1); backdrop-filter: blur(12px);
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--gold); font-size: .75rem; font-weight: 800; letter-spacing: .23em; text-transform: uppercase; }
+    h1 { margin: 0 auto 13px; font-family: "Playfair Display", serif; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; letter-spacing: -.04em; }
+    h1 span { color: var(--pink); }
+    .lead { max-width: 500px; margin: 0 auto 28px; color: var(--muted); line-height: 1.75; }
+    video { display: block; width: 100%; max-height: 400px; background: #070916; }
+    .gallery-title { margin: 0 0 14px; color: var(--muted); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .gallery video { min-height: 95px; max-height: 150px; border-radius: 13px; object-fit: cover; }
+    .empty { margin: 0; padding: 18px; color: #9f9bb9; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; font-size: .84rem; }
+    footer { margin-top: 25px; color: #8f91b1; font-size: .72rem; letter-spacing: .07em; }
+    @media (max-width: 520px) { .card { border-radius: 25px; } }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main>
+    <section class="card" aria-labelledby="title">
+      <p class="eyebrow">Khoảnh khắc đáng nhớ</p>
+      <h1 id="title">Video <span>sinh nhật</span></h1>
+      <p class="lead">Những khoảnh khắc yêu thương dành cho anh trai tuổi 34.</p>
+
+      <div class="gallery-title">Video kỷ niệm</div>
+      <div class="gallery">
+        <!-- Dán link video bằng cách bỏ comment dòng dưới. Có thể thêm nhiều thẻ video.
+        Video sẽ phát âm thanh sau khi bạn bấm nút Play trên trình duyệt.
+        <video controls playsinline preload="metadata" src="DAN_LINK_VIDEO_VAO_DAY"></video>
+        -->
+        <p class="empty">Các video kỷ niệm sẽ hiển thị ở đây.</p>
+      </div>
+      <footer>Thêm một chút yêu thương, lưu lại thật nhiều kỷ niệm ♡</footer>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll("video").forEach((video) => {
+      video.muted = false;
+      video.volume = 1;
+    });
+  </script>
+</body>
+</html>

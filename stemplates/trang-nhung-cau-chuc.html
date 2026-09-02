@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Những lời chúc dành cho anh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fff8f2;
+      --pink: #ff9cac;
+      --rose: #ff6f91;
+      --gold: #ffd77a;
+      --muted: #e4bdca;
+      --night: #251431;
+      --panel: rgba(65, 26, 57, .78);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--cream);
+      font-family: "Be Vietnam Pro", sans-serif;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(188, 56, 105, .36), transparent 28rem),
+        radial-gradient(circle at 10% 90%, rgba(255, 125, 111, .13), transparent 23rem),
+        var(--night);
+    }
+
+    .stars, .stars::before, .stars::after {
+      position: fixed;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255,215,122,.76) 0 1.2px, transparent 2px);
+      background-position: 10% 16%, 70% 40%;
+      background-size: 180px 155px, 245px 220px;
+      opacity: .4;
+    }
+    .stars::before { transform: translate(60px, 38px); opacity: .2; }
+    .stars::after { transform: translate(-40px, -55px); opacity: .19; }
+
+    main {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      padding: 46px 20px;
+      place-items: center;
+    }
+    .card {
+      position: relative;
+      width: min(100%, 780px);
+      padding: clamp(30px, 6vw, 63px) clamp(20px, 7vw, 75px) 37px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, .17);
+      border-radius: 34px;
+      background: linear-gradient(145deg, rgba(104, 41, 73, .84), var(--panel));
+      box-shadow: 0 28px 90px rgba(0,0,0,.36), inset 0 1px rgba(255,255,255,.12);
+      backdrop-filter: blur(13px);
+    }
+    .eyebrow {
+      margin: 0 0 11px;
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 auto 12px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+    h1 span { color: var(--pink); }
+    .lead {
+      max-width: 500px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .galaxy {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      animation: galaxy-spin 22s linear infinite;
+      opacity: .9;
+    }
+    .galaxy::before,
+    .galaxy::after {
+      position: absolute;
+      inset: 10% 8%;
+      border-radius: 50%;
+      content: "";
+    }
+    .galaxy::before {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.95) 0 2%, rgba(255, 217, 151, .9) 4%, rgba(255, 146, 176, .68) 9%, rgba(118, 90, 214, .4) 18%, rgba(27, 21, 49, .08) 42%, transparent 62%),
+        repeating-radial-gradient(circle at 50% 50%, rgba(255, 234, 182, .82) 0 2px, rgba(255, 155, 184, .42) 3px 8px, rgba(139, 100, 255, .2) 9px 16px, transparent 17px 32px);
+      box-shadow: 0 0 40px rgba(154, 107, 255, .26), inset 0 0 50px rgba(255, 201, 126, .15);
+      transform: rotate(-26deg) scale(1.12);
+    }
+    .galaxy::after {
+      inset: 18% 14%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.8) 0 1.5%, rgba(167, 139, 255, .54) 10%, rgba(255,130,170,.35) 18%, rgba(0,0,0,0) 42%),
+        conic-gradient(from 0deg, rgba(255, 220, 136, 0) 0deg, rgba(255, 220, 136, .75) 32deg, rgba(255, 160, 185, .72) 94deg, rgba(152, 112, 255, .32) 165deg, rgba(255,220,136,0) 220deg, rgba(255, 220, 136, 0) 360deg);
+      filter: blur(10px);
+      opacity: .8;
+      animation: galaxy-spin-reverse 18s linear infinite;
+    }
+    .heart-stage {
+      position: relative;
+      width: min(82vw, 390px);
+      height: 320px;
+      margin: 26px auto 18px;
+      overflow: hidden;
+    }
+    .heart-stage::before {
+      position: absolute;
+      inset: 41px 39px 35px;
+      border: 1px solid rgba(255, 215, 122, .32);
+      border-radius: 50%;
+      transform: rotate(-17deg);
+      content: "";
+      z-index: 1;
+    }
+    .heart-stage::after {
+      position: absolute;
+      inset: 29px 52px 46px;
+      border: 1px solid rgba(255, 156, 172, .32);
+      border-radius: 50%;
+      transform: rotate(31deg);
+      content: "";
+    }
+    .heart {
+      position: absolute;
+      top: 74px;
+      left: 50%;
+      z-index: 2;
+      color: var(--rose);
+      font-size: 8.8rem;
+      line-height: 1;
+      text-shadow: 0 0 19px rgba(255, 111, 145, .7), 0 18px 34px rgba(0,0,0,.25);
+      transform: translateX(-50%);
+      animation: heartbeat 2.5s ease-in-out infinite;
+    }
+    .heart::after {
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      color: #fff4f4;
+      content: "♡";
+      font-size: 2.2rem;
+      transform: translate(-50%, -50%);
+    }
+    .orbit-item {
+      position: absolute;
+      z-index: 3;
+      color: var(--gold);
+      font-size: 1.55rem;
+      text-shadow: 0 0 15px rgba(255, 215, 122, .9);
+      animation: float-orbit 9s linear infinite;
+    }
+    .orbit-item:nth-of-type(1) { top: 35px; left: 21%; }
+    .orbit-item:nth-of-type(2) { right: 17%; bottom: 45px; animation-delay: -3s; animation-duration: 11s; color: #fff1f3; }
+    .orbit-item:nth-of-type(3) { bottom: 35px; left: 27%; animation-delay: -6s; animation-duration: 12s; font-size: 1rem; }
+    .orbit-item:nth-of-type(4) { top: 80px; right: 25%; animation-delay: -1.5s; animation-duration: 10s; font-size: .85rem; }
+
+    .wishes {
+      position: relative;
+      min-height: 170px;
+      margin: 0 auto;
+    }
+    .wish {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      padding: 22px 25px;
+      place-items: center;
+      color: #fff4f6;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 19px;
+      background: rgba(255,255,255,.07);
+      font-size: clamp(.95rem, 2vw, 1.08rem);
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(13px);
+      transition: opacity .4s ease, transform .4s ease;
+      pointer-events: none;
+    }
+    .wish.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .wish .typed {
+      display: inline-block;
+      min-height: 1.6em;
+      border-right: 2px solid rgba(255, 215, 122, .9);
+      animation: caret-blink .8s steps(1) infinite;
+      white-space: normal;
+    }
+    .wish strong { color: var(--gold); }
+    .hint { margin: 22px 0 0; color: #d7a8b9; font-size: .75rem; letter-spacing: .04em; }
+    .video-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 12px 19px;
+      color: #3f1e42;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #ffe9b0);
+      box-shadow: 0 8px 20px rgba(255,215,122,.16);
+      font-size: .8rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .video-link:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(255,215,122,.27); }
+    footer { margin-top: 23px; color: #b77f96; font-size: .72rem; letter-spacing: .08em; }
+
+    @keyframes galaxy-spin {
+     from { transform: rotate(0deg) scale(1); }
+     to { transform: rotate(360deg) scale(1.08); }
+    }
+    @keyframes galaxy-spin-reverse {
+     from { transform: rotate(360deg) scale(1); }
+     to { transform: rotate(0deg) scale(1.08); }
+    }
+    @keyframes heartbeat {
+     0%, 100% { transform: translateX(-50%) scale(1); }
+     12% { transform: translateX(-50%) scale(1.08); }
+     24% { transform: translateX(-50%) scale(1); }
+     36% { transform: translateX(-50%) scale(1.05); }
+    }
+    @keyframes float-orbit {
+     from { transform: rotate(0deg) translateX(145px) rotate(0deg); }
+     to { transform: rotate(360deg) translateX(145px) rotate(-360deg); }
+    }
+    @keyframes caret-blink {
+      50% { border-color: transparent; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .heart, .orbit-item, .wish .typed { animation: none; }
+      .wish.visible { opacity: 1; transform: none; }
+    }
+    @media (max-width: 520px) {
+      .card { border-radius: 25px; }
+      .heart-stage { height: 275px; }
+      .heart { top: 65px; font-size: 7.5rem; }
+      @keyframes float-orbit {
+        from { transform: rotate(0deg) translateX(108px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(108px) rotate(-360deg); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main>
+    <section class="card" aria-labelledby="title">
+      <p class="eyebrow">Gửi anh trai thân yêu</p>
+      <h1 id="title">Những lời chúc <span>từ trái tim</span></h1>
+      <p class="lead">Mỗi lời chúc là một vì sao nhỏ, cùng bay quanh trái tim và mang theo thật nhiều yêu thương.</p>
+
+      <div class="heart-stage" aria-hidden="true">
+        <div class="galaxy"></div>
+        <span class="orbit-item">✦</span>
+        <span class="orbit-item">♡</span>
+        <span class="orbit-item">✧</span>
+        <span class="orbit-item">✦</span>
+        <div class="heart">♥</div>
+      </div>
+
+      <div class="wishes" aria-live="polite">
+        <p class="wish visible" data-text="Chúc anh công việc luôn thuận lợi, mọi kế hoạch đều đi đúng hướng và thành công nối tiếp thành công."><span class="typed"></span></p>
+        <p class="wish" data-text="Mong anh luôn giữ được ngọn lửa đam mê, gặp đúng cơ hội và được ghi nhận xứng đáng."><span class="typed"></span></p>
+        <p class="wish" data-text="Chúc sự nghiệp của anh ngày càng vững vàng, rực rỡ, mỗi thử thách đều hóa thành bước tiến mới."><span class="typed"></span></p>
+        <p class="wish" data-text="Mong nơi làm việc luôn có những người đồng đội tuyệt vời và thật nhiều niềm vui mỗi ngày."><span class="typed"></span></p>
+        <p class="wish" data-text="Tuổi 34 thật đáng nhớ: tự tin tiến về phía trước và chạm đến mọi mục tiêu anh mong muốn!"><span class="typed"></span></p>
+      </div>
+      <p class="hint">Các lời chúc đang lần lượt gửi đến anh…</p>
+      <a class="video-link" href="{{ url_for('birthday_video') }}">🎬 Đi tiếp đến trang video</a>
+      <footer>Thương chúc anh một sinh nhật thật hạnh phúc ♡</footer>
+    </section>
+  </main>
+  <script>
+    const wishes = [...document.querySelectorAll('.wish')];
+    let currentIndex = 0;
+
+    function showNextWish() {
+      wishes.forEach((wish, index) => {
+        wish.classList.toggle('visible', index === currentIndex);
+      });
+
+      const activeWish = wishes[currentIndex];
+      const text = activeWish.dataset.text;
+      const typingTarget = activeWish.querySelector('.typed');
+      typingTarget.textContent = '';
+
+      let i = 0;
+      const typeLoop = () => {
+        typingTarget.textContent = text.slice(0, i + 1);
+        i += 1;
+
+        if (i < text.length) {
+          setTimeout(typeLoop, 34);
+          return;
+        }
+
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % wishes.length;
+          showNextWish();
+        }, 1800);
+      };
+
+      typeLoop();
+    }
+
+    showNextWish();
+  </script>
+</body>
+</html>
