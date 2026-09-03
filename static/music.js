@@ -39,6 +39,7 @@
   }
 
   function startMusic() {
+    if (isPlaying) return;
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     masterGain = audioContext.createGain();
     masterGain.gain.value = 0.7;
@@ -70,4 +71,29 @@
       startMusic();
     }
   });
+
+  function tryAutoplay() {
+    if (isPlaying) {
+      if (audioContext && audioContext.state === "suspended") {
+        audioContext.resume().catch((error) => {
+          if (!(error instanceof DOMException) || error.name !== "NotAllowedError") {
+            throw error;
+          }
+        });
+      }
+      return;
+    }
+    try {
+      startMusic();
+    } catch (error) {
+      if (!(error instanceof DOMException) || error.name !== "NotAllowedError") {
+        throw error;
+      }
+    }
+  }
+
+  ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+    document.addEventListener(eventName, tryAutoplay, { once: true, passive: true });
+  });
+  tryAutoplay();
 })();
