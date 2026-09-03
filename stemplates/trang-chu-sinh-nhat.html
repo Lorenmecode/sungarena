@@ -117,6 +117,28 @@
       animation: fade-up .7s .35s both;
     }
 
+    .music-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      color: var(--gold);
+      border: 1px solid rgba(255, 215, 122, .32);
+      border-radius: 999px;
+      background: rgba(255, 215, 122, .08);
+      font: inherit;
+      font-size: .78rem;
+      cursor: pointer;
+      transition: background .25s, transform .25s, box-shadow .25s;
+    }
+
+    .music-toggle:hover,
+    .music-toggle.is-playing {
+      background: rgba(255, 215, 122, .16);
+      box-shadow: 0 0 20px rgba(255, 215, 122, .16);
+      transform: translateY(-2px);
+    }
+
     .portrait-wrap {
       position: relative;
       display: grid;
@@ -407,6 +429,7 @@
       <p class="eyebrow">Một ngày thật đặc biệt</p>
       <h1 id="title">Chúc mừng sinh nhật <span>anh trai!</span></h1>
       <p class="intro">Hôm nay là ngày để cả nhà cùng nâng ly, mỉm cười và chúc mừng người anh tuyệt vời nhất.</p>
+      <button class="music-toggle" type="button" data-music-toggle aria-pressed="false">♫ Bật nhạc du dương</button>
 
       <div class="portrait-wrap">
         <div class="orbit" aria-hidden="true"></div>
@@ -425,6 +448,7 @@
       <footer>Với thật nhiều yêu thương từ gia đình ♡</footer>
     </section>
   </main>
+  <script src="{{ url_for('static', filename='music.js') }}"></script>
 </body>
 
 </html>

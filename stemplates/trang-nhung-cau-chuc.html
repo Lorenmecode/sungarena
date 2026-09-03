@@ -87,6 +87,29 @@
       line-height: 1.75;
     }
 
+    .music-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      padding: 10px 16px;
+      color: var(--gold);
+      border: 1px solid rgba(255, 215, 122, .32);
+      border-radius: 999px;
+      background: rgba(255, 215, 122, .08);
+      font: inherit;
+      font-size: .78rem;
+      cursor: pointer;
+      transition: background .25s, transform .25s, box-shadow .25s;
+    }
+
+    .music-toggle:hover,
+    .music-toggle.is-playing {
+      background: rgba(255, 215, 122, .16);
+      box-shadow: 0 0 20px rgba(255, 215, 122, .16);
+      transform: translateY(-2px);
+    }
+
     .galaxy {
       position: absolute;
       inset: 0;
@@ -272,6 +295,7 @@
       <p class="eyebrow">Gửi anh trai thân yêu</p>
       <h1 id="title">Những lời chúc <span>từ trái tim</span></h1>
       <p class="lead">Mỗi lời chúc là một vì sao nhỏ, cùng bay quanh trái tim và mang theo thật nhiều yêu thương.</p>
+      <button class="music-toggle" type="button" data-music-toggle aria-pressed="false">♫ Bật nhạc du dương</button>
 
       <div class="heart-stage" aria-hidden="true">
         <div class="galaxy"></div>
@@ -329,5 +353,6 @@
 
     showNextWish();
   </script>
+  <script src="{{ url_for('static', filename='music.js') }}"></script>
 </body>
 </html>
